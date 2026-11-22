@@ -133,6 +133,7 @@ class ConfigManager {
   }
 
   private initializeConfig() {
+    fs.mkdirSync(path.dirname(this.configPath), { recursive: true });
     const exists = fs.existsSync(this.configPath);
     if (!exists) {
       fs.writeFileSync(
@@ -150,9 +151,9 @@ class ConfigManager {
             `Error parsing config file at ${this.configPath}:`,
             err,
           );
-          console.log(
-            'Loading default config and overwriting the existing file.',
-          );
+          const backupPath = `${this.configPath}.invalid-${Date.now()}.bak`;
+          fs.copyFileSync(this.configPath, backupPath);
+          console.error(`Invalid config backed up to ${backupPath}. Restoring defaults.`);
           fs.writeFileSync(
             this.configPath,
             JSON.stringify(this.currentConfig, null, 2),
