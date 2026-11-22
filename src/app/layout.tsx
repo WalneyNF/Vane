@@ -19,8 +19,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Vane - Direct your curiosity',
-  description: 'Vane is an AI powered answering engine.',
+  title: 'WMK Pesquisa IA — Pesquisa inteligente',
+  description: 'WMK Pesquisa IA: pesquisa inteligente com fontes, documentos e modelos de IA.',
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
   const configSections = configManager.getUIConfigSections();
 
   return (
-    <html className="h-full" lang="en" suppressHydrationWarning>
+    <html className="h-full" lang="pt-BR" suppressHydrationWarning>
       <body className={cn('h-full antialiased', montserrat.className)}>
         <ThemeProvider>
           {setupComplete ? (
