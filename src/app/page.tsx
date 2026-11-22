@@ -2,8 +2,8 @@ import ChatWindow from '@/components/ChatWindow';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Chat - Vane',
-  description: 'Chat with the internet, chat with Vane.',
+  title: 'Pesquisa — WMK Pesquisa IA',
+  description: 'Pesquise na internet e converse com inteligência artificial.',
 };
 
 const Home = () => {
